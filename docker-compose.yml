@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  go: &default
+    build: .
+    image: dannyben/go
+    entrypoint: go
+    volumes:
+    - ./go:/go
+    - ./app:/go/src/app
+
+  app:
+    <<: *default
+    command: run app.go
+
+  install-deps:
+    <<: *default
+    command: get -d -v ./...
+
+  bash:
+    <<: *default
+    entrypoint: bash
+
