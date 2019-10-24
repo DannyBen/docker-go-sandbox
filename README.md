@@ -1,6 +1,9 @@
 Go Sandbox
 ==================================================
 
+Docker sandbox for developing in Go without installing Go.
+
+
 Usage
 --------------------------------------------------
 
